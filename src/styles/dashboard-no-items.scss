@@ -1,0 +1,18 @@
+/**
+ * Empty dashboard list
+ */
+
+.dashboard-no-items {
+	@include flex-col(center, center);
+	flex: 1;
+
+	.icon {
+		font-size: 70pt;
+		margin-bottom: 20px;
+	}
+
+	path,
+	.text {
+		color: rgb(197, 197, 197);
+	}
+}
