@@ -15,17 +15,27 @@
 		padding: 0 20px;
 		background: rgb(245, 245, 245);
 		.head {
-			@include flex-row(initial, center);
+			.date {
+				cursor: pointer;
+				border-radius: 5px;
+				border: none;
+				padding: 1px 5px;
+				text-align: center;
+				background: $color-theme1;
+				color: white;
+			}
 		}
 		.icon {
 			width: 40px;
-			margin-right: 10px;
 		}
 		.search {
 			@include flex-row(center, center);
 			height: 30px;
 			flex: 1;
 			margin-left: 20px;
+			path {
+				color: white;
+			}
 		}
 		.input {
 			flex: 1;
@@ -43,10 +53,8 @@
 
 	&__actions {
 		@include flex-row(initial, center);
-		.icon {
-			margin-right: 10px;
-		}
 		.avatar {
+			margin-right: 10px;
 			border-radius: 50%;
 			width: 30px;
 			height: 30px;
@@ -62,5 +70,13 @@
 				background: white;
 			}
 		}
+	}
+
+	&__body {
+		display: grid;
+		grid-row-gap: 20px;
+		grid-column-gap: 20px;
+		grid-template-columns: repeat(2, 1fr);
+		padding: 20px;
 	}
 }
