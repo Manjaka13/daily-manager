@@ -1,0 +1,3 @@
+/**
+ * Typescript types and interfaces
+ */

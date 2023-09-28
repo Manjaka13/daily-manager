@@ -1,0 +1,37 @@
+/**
+ * Basic mixins
+ */
+
+@mixin flex {
+	display: flex;
+}
+
+@mixin flex-col($align-x: initial, $align-y: initial) {
+	@include flex;
+	flex-direction: column;
+	justify-content: $align-y;
+	align-items: $align-x;
+}
+
+@mixin flex-row($align-x: initial, $align-y: initial) {
+	@include flex;
+	flex-direction: row;
+	justify-content: $align-x;
+	align-items: $align-y;
+}
+
+@mixin screen-x($size: $screen-xlg) {
+	@media only screen and (max-width: $size) {
+		@content;
+	}
+}
+
+@mixin screen-y($size: $screen-xlg) {
+	@media only screen and (max-height: $size) {
+		@content;
+	}
+}
+
+@mixin transition($duration: 0.2s) {
+	transition: all #{$duration} ease-in-out;
+}
