@@ -76,6 +76,16 @@
 				background: rgb(243, 243, 243);
 			}
 		}
+		a {
+			color: $color-text1;
+			font-weight: normal;
+		}
+		.red {
+			color: $color-danger;
+			path {
+				color: $color-danger;
+			}
+		}
 	}
 
 	&__body {
@@ -131,6 +141,12 @@
 	@include screen-x(1300px) {
 		&__body {
 			display: block;
+		}
+	}
+
+	&__body {
+		&--no-padding {
+			padding-top: 0;
 		}
 	}
 }

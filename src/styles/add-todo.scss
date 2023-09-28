@@ -1,0 +1,45 @@
+/**
+ * Add todo form
+ */
+
+.add-todo {
+	@include flex-row(initial, center);
+	margin: 20px;
+	margin-top: 76px;
+	border: 1px rgb(233, 233, 233) solid;
+	border-radius: 10px;
+	padding: 20px;
+	background: rgb(247, 247, 247);
+
+	@include screen-x(1600px) {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+
+	@include screen-x(1400px) {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	@include screen-x(1300px) {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	&__input {
+		flex: 1;
+		margin-right: 20px;
+		border: 1px rgb(233, 233, 233) solid;
+		padding: 0 20px;
+		height: 40px;
+		border-radius: 5px;
+	}
+
+	.button {
+		height: 40px;
+		path {
+			color: white;
+			margin-right: 10px;
+		}
+	}
+}

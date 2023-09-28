@@ -4,10 +4,11 @@ import {
 	faSearch,
 	faCheck,
 	faCircleExclamation,
+	faCancel,
 } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Export icons from here
  */
 
-export { Icon, faPlusCircle, faSearch, faCheck, faCircleExclamation };
+export { Icon, faPlusCircle, faSearch, faCheck, faCircleExclamation, faCancel };
