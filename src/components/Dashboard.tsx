@@ -5,6 +5,7 @@ import Logo from "src/images/logo.png";
 import DashboardItem from "src/components/DashboardItem";
 import { IDashboardItem } from "src/helpers/interfaces";
 import { Icon, faPlusCircle, faSearch } from "src/helpers/icons";
+import DashboardNoItems from "src/components/DashboardNoItems";
 
 /**
  * Main dashboard
@@ -56,9 +57,6 @@ const Dashboard: FC = (): JSX.Element => {
 					<li className="item" title="Ajout note à faire">
 						<Icon className="icon" icon={faPlusCircle} /> Ajouter à faire
 					</li>
-					<li className="item" title="Ajout revenu/dépense">
-						<Icon className="icon" icon={faPlusCircle} /> Ajouter un flux
-					</li>
 					<li className="item" onClick={signOut} title="Vous déconnecter">
 						<img
 							className="icon avatar"
@@ -69,7 +67,8 @@ const Dashboard: FC = (): JSX.Element => {
 					</li>
 				</ul>
 			</nav>
-			<div className="dashboard__body">{mappedItemList}</div>
+			{/* <div className="dashboard__body">{mappedItemList}</div> */}
+			<DashboardNoItems />
 		</div>
 	);
 };
