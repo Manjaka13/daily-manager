@@ -1,0 +1,11 @@
+/**
+ * Loading screen styles
+ */
+
+.loading {
+	text-align: center;
+	.text {
+		margin-top: 20px;
+		color: $color-text2;
+	}
+}

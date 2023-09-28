@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-import { FIREBASE } from "@/helpers/const";
+import { FIREBASE } from "src/helpers/const";
 
 /**
  * Configure firebase

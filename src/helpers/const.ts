@@ -11,3 +11,13 @@ export const FIREBASE = {
 	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SERNDER_ID || "",
 	appId: process.env.REACT_APP_FIREBASE_APP_ID || "",
 };
+
+// Button colors
+export const BUTTON_LIST: string[] = [
+	"theme",
+	"danger",
+	"warning",
+	"success",
+	"blank",
+	"dark",
+];

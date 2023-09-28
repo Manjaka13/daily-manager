@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "@/components/App";
+import App from "src/components/App";
 import reportWebVitals from "./reportWebVitals";
-import "@/styles/index.scss";
+import { UserProvider } from "src/hooks/useUser";
+import "src/styles/index.scss";
 
 /**
  * Javascript entry point
@@ -14,7 +15,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
 	<React.StrictMode>
-		<App />
+		<UserProvider>
+			<App />
+		</UserProvider>
 	</React.StrictMode>
 );
 

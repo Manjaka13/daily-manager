@@ -1,0 +1,56 @@
+/**
+ * Button styles
+ */
+
+.button {
+	@include transition;
+	@include flex-row(center, center);
+	padding: 0 20px;
+	height: 40px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	color: white;
+	background: $color-theme1;
+	border: none;
+
+	&:hover {
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	}
+
+	&:active {
+		box-shadow: 0px 0px 10px black;
+	}
+
+	&--disabled {
+		pointer-events: none;
+		color: rgb(200, 200, 200);
+	}
+
+	&--danger {
+		background: $color-danger;
+	}
+
+	&--success {
+		background: $color-success;
+	}
+
+	&--warning {
+		background: orange;
+	}
+
+	&--blank {
+		background: white;
+		border: 1px $color-text1 solid;
+	}
+
+	&--theme {
+		background: $color-theme1;
+		color: white;
+	}
+
+	&--dark {
+		background: black;
+		color: white;
+	}
+}

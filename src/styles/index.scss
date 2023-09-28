@@ -2,28 +2,12 @@
  * Global styles
  */
 
-@import "@/styles/vars.scss";
-@import "@/styles/mixins.scss";
-
-* {
-	box-sizing: border-box;
-	font-family: sans-serif;
-}
-
-html,
-body,
-p {
-	padding: 0;
-	margin: 0;
-}
-
-body {
-	@include flex-col(center, center);
-	min-height: 100vh;
-}
-
-ul {
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
-}
+@import "src/styles/fonts.scss";
+@import "src/styles/vars.scss";
+@import "src/styles/mixins.scss";
+@import "src/styles/scaffolding.scss";
+@import "src/styles/button.scss";
+@import "src/styles/spinner.scss";
+@import "src/styles/loading.scss";
+@import "src/styles/sign-in.scss";
+@import "src/styles/dashboard.scss";
