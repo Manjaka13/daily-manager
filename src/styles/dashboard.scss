@@ -1,0 +1,66 @@
+/**
+ * Dashboard styles
+ */
+
+.dashboard {
+	width: 80%;
+	height: 80%;
+	box-shadow: 0px 0px 40px rgb(218, 218, 218);
+	border-radius: 20px;
+
+	&__nav {
+		@include flex-row(space-between, center);
+		width: 100%;
+		height: 46px;
+		padding: 0 20px;
+		background: rgb(245, 245, 245);
+		.head {
+			@include flex-row(initial, center);
+		}
+		.icon {
+			width: 40px;
+			margin-right: 10px;
+		}
+		.search {
+			@include flex-row(center, center);
+			height: 30px;
+			flex: 1;
+			margin-left: 20px;
+		}
+		.input {
+			flex: 1;
+			border-radius: 5px 0 0 5px;
+			border: none;
+			height: 100%;
+			padding: 0 10px;
+		}
+		.button {
+			padding: 0 10px;
+			height: 100%;
+			border-radius: 0 5px 5px 0;
+		}
+	}
+
+	&__actions {
+		@include flex-row(initial, center);
+		.icon {
+			margin-right: 10px;
+		}
+		.avatar {
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			background: rgb(200, 200, 200);
+		}
+		.item {
+			@include flex-row(initial, center);
+			margin-left: 15px;
+			padding: 3px 5px;
+			border-radius: 5px;
+			cursor: pointer;
+			&:hover {
+				background: white;
+			}
+		}
+	}
+}
