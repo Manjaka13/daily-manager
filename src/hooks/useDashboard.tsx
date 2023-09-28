@@ -80,6 +80,7 @@ export const DashboardProvider: FC<IDashboardProvider> = ({
 					date: data.date,
 					amount: data.amount,
 					done: data.done,
+					owner: data.owner,
 				});
 			});
 			setItemList(fetchedTodos);

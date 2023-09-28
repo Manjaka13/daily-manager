@@ -20,7 +20,7 @@ const Dashboard: FC = (): JSX.Element => {
 		useContext(DashboardContext);
 
 	const filteredItemList: IDashboardItem[] = itemList.filter(
-		(item) => item.date === date
+		(item) => item.owner === user?.email
 	);
 
 	const switchTodoStatus = (item: IDashboardItem): void => {

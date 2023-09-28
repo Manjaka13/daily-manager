@@ -12,4 +12,5 @@ export interface IDashboardItem {
 	date?: string;
 	done: boolean;
 	amount: number;
+	owner: string;
 }

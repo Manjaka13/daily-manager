@@ -11,12 +11,14 @@ import { DashboardContext } from "src/hooks/useDashboard";
 import { db } from "src/helpers/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import Spinner from "src/components/Spinner";
+import { UserContext } from "src/hooks/useUser";
 
 /**
  * Add todo form
  */
 
 const AddTodo: FC = (): JSX.Element => {
+	const { user } = useContext(UserContext);
 	const { date, dashboardLoading, switchAddForm, switchLoading } =
 		useContext(DashboardContext);
 	const [content, setContent] = useState<string>("");
@@ -24,9 +26,8 @@ const AddTodo: FC = (): JSX.Element => {
 
 	// When form is submited
 	const handleSubmit = (e: SyntheticEvent<HTMLFormElement>): void => {
-		const todo = { content, amount, date, done: false };
+		const todo = { content, amount, date, done: false, owner: user?.email || "" };
 		e.preventDefault();
-		console.log(todo);
 		switchLoading(true);
 		// Push todo to firebase
 		addDoc(collection(db, "todos"), todo)
