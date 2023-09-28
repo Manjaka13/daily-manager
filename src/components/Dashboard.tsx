@@ -16,7 +16,7 @@ const Dashboard: FC = (): JSX.Element => {
 
 	const itemList: IDashboardItem[] = [
 		{
-			content: "Payer la rémunération du gardien Atsimovohitra",
+			content: "Rémunération du gardien Atsimovohitra",
 			amount: 350000,
 			done: false,
 		},
@@ -67,8 +67,10 @@ const Dashboard: FC = (): JSX.Element => {
 					</li>
 				</ul>
 			</nav>
-			{/* <div className="dashboard__body">{mappedItemList}</div> */}
-			<DashboardNoItems />
+			{itemList.length > 0 && (
+				<div className="dashboard__body">{mappedItemList}</div>
+			)}
+			{itemList.length === 0 && <DashboardNoItems />}
 		</div>
 	);
 };

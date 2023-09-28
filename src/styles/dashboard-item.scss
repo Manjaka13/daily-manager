@@ -10,22 +10,48 @@
 	border-radius: 10px;
 	cursor: pointer;
 
+	@include screen-x(1300px) {
+		margin-bottom: 20px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@include screen-x(700px) {
+		display: block;
+	}
+
 	&__head {
 		@include flex-row(initial, center);
 		pointer-events: none;
+		@include screen-x(700px) {
+			@include flex-row(initial, initial);
+		}
 		.tick {
 			@include flex-row(center, center);
 			width: 20px;
 			height: 20px;
 			border-radius: 3px;
 			background: white;
-			margin-right: 10px;
+			margin-right: 20px;
+			@include screen-x(700px) {
+				margin-top: 7px;
+			}
+		}
+		.text {
+			margin-right: 20px;
+			text-align: left;
+			flex: 1;
 		}
 	}
 
 	.value {
 		pointer-events: none;
 		font-weight: bold;
+		white-space: nowrap;
+		@include screen-x(700px) {
+			margin-left: 40px;
+		}
 	}
 
 	&--done {
