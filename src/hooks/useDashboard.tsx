@@ -6,14 +6,7 @@ import React, {
 	useEffect,
 } from "react";
 import { getToday } from "src/helpers/utils";
-import {
-	query,
-	collection,
-	orderBy,
-	onSnapshot,
-	limit,
-	where,
-} from "firebase/firestore";
+import { query, collection, onSnapshot, where } from "firebase/firestore";
 import { db } from "src/helpers/firebase";
 import { IDashboardItem } from "src/helpers/interfaces";
 
@@ -57,7 +50,7 @@ export const DashboardProvider: FC<IDashboardProvider> = ({
 	const [dashboardLoading, setDashboardLoading] = useState<boolean>(
 		defaultValues.dashboardLoading
 	);
-	const [search, setSearch] = useState<string | null>(defaultValues.search);
+	const [search] = useState<string | null>(defaultValues.search);
 	const [addFormShown, setAddFormShown] = useState<boolean>(
 		defaultValues.addFormShown
 	);
@@ -86,6 +79,7 @@ export const DashboardProvider: FC<IDashboardProvider> = ({
 			setItemList(fetchedTodos);
 		});
 		return () => unsubscribe();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const value: IDashboardContext = {
