@@ -7,7 +7,9 @@ export interface IUser {
 }
 
 export interface IDashboardItem {
+	id: string;
 	content: string;
+	date?: string;
 	done: boolean;
 	amount: number;
 }

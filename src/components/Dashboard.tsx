@@ -7,6 +7,8 @@ import { Icon, faPlusCircle, faSearch, faCancel } from "src/helpers/icons";
 import DashboardNoItems from "src/components/DashboardNoItems";
 import { DashboardContext } from "src/hooks/useDashboard";
 import AddTodo from "src/components/AddTodo";
+import { db } from "src/helpers/firebase";
+import { updateDoc, doc } from "firebase/firestore";
 
 /**
  * Main dashboard
@@ -14,34 +16,21 @@ import AddTodo from "src/components/AddTodo";
 
 const Dashboard: FC = (): JSX.Element => {
 	const { user, signOut } = useContext(UserContext);
-	const { date, addFormShown, changeDate, switchAddForm } =
+	const { date, addFormShown, itemList, changeDate, switchAddForm } =
 		useContext(DashboardContext);
 
-	const itemList: IDashboardItem[] = [
-		{
-			content: "Rémunération du gardien Atsimovohitra",
-			amount: 350000,
-			done: false,
-		},
-		{
-			content: "Acheter rivets",
-			amount: 12000,
-			done: false,
-		},
-		{
-			content: "Faire la lessive",
-			amount: 0,
-			done: false,
-		},
-		{
-			content: "Séance de stretching matinale",
-			amount: 0,
-			done: true,
-		},
-	];
+	const filteredItemList: IDashboardItem[] = itemList.filter(
+		(item) => item.date === date
+	);
 
-	const mappedItemList: JSX.Element[] = itemList.map((item, key) => (
-		<DashboardItem item={item} key={key} />
+	const switchTodoStatus = (item: IDashboardItem): void => {
+		updateDoc(doc(db, "todos", item.id), { done: !item.done }).catch((err) =>
+			console.error(err)
+		);
+	};
+
+	const mappedItemList: JSX.Element[] = filteredItemList.map((item, key) => (
+		<DashboardItem item={item} switchTodoStatus={switchTodoStatus} key={key} />
 	));
 
 	return (
@@ -80,7 +69,7 @@ const Dashboard: FC = (): JSX.Element => {
 				</ul>
 			</nav>
 			{addFormShown && <AddTodo />}
-			{itemList.length > 0 && (
+			{filteredItemList.length > 0 && (
 				<div
 					className={`dashboard__body${
 						addFormShown ? " dashboard__body--no-padding" : ""
@@ -89,7 +78,7 @@ const Dashboard: FC = (): JSX.Element => {
 					{mappedItemList}
 				</div>
 			)}
-			{itemList.length === 0 && <DashboardNoItems />}
+			{filteredItemList.length === 0 && <DashboardNoItems />}
 		</div>
 	);
 };
