@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Daily manager
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple todolist I've made using React/Typescript. It acts as a simple note app with some other functionnalities such as sign in and saving data on firebase cloud. You can live preview it [here](https://daily-manager.netlify.app/), you just need to log in with an email and all your data will be saved on the cloud using firestore.
 
-## Available Scripts
+### Installation
 
-In the project directory, you can run:
+To run the project locally you have to create an app in [firebase console](https://console.firebase.google.com/) first and retrieve your own credentials, put these in an **.env.local** file. There is already an environment variable template named **.env.local.txt** in the pushed commits so you just have to remove the **.txt** extension and replace the content with yours.
 
-### `npm start`
+Then you'll need to install the project with:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+``
+npm install
+``
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Once installed and the environment variables ready, you can run this command to start the project locally:
 
-### `npm test`
+``
+npm start
+``
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it live in the browser.
 
-### `npm run build`
+### Side note
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Major updates will come soon so stay tuned. Please star the repo and fork it as you wish, feel free to contribute to this repo and propose new functionnalities for the app !
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Made by [Hari](https://harij.vercel.app)**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
